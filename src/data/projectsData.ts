@@ -1,10 +1,10 @@
 import type { ProjectItem } from '@/types';
-import zabbixImg from '@/assets/zabbix-monitoring-lab.png';
-import technovaImg from '@/assets/technova-vlan.png';
-import networkAnalyzerImg from '@/assets/network-analyzer.png';
-import buildsafeImg from '@/assets/buildsafe.png';
-import tiendayaImg from '@/assets/tiendaya.png';
-import transpormapImg from '@/assets/transpormap.png';
+import zabbixImg from '@/assets/zabbix-monitoring-lab.webp';
+import technovaImg from '@/assets/technova-vlan.webp';
+import networkAnalyzerImg from '@/assets/network-analyzer.webp';
+import buildsafeImg from '@/assets/buildsafe.webp';
+import tiendayaImg from '@/assets/tiendaya.webp';
+import transpormapImg from '@/assets/transpormap.webp';
 
 export const projectsData: ProjectItem[] = [
   {
@@ -39,12 +39,12 @@ export const projectsData: ProjectItem[] = [
     previewLabel: 'Network Analyzer Dashboard preview',
     image: networkAnalyzerImg,
     summary:
-      'Scans a local network via ARP and ICMP, calculates subnets with VLSM, and visualizes the topology as an interactive dashboard.',
+      'Python network scanner operated from an HTML dashboard: detects active hosts via ARP and ICMP, calculates VLSM subnets, and visualizes the topology.',
     technologies: ['Python', 'ARP', 'ICMP', 'VLSM', 'Subnetting', 'HTML'],
     extraTech: '+1 Cisco',
     outcome: 'Making networking theory concrete and measurable',
     githubUrl: 'https://github.com/juancveg/Network-Analyzer-Dashboard',
-    categories: ['Networking', 'Web Development'],
+    categories: ['Networking', 'Software Development'],
   },
   {
     id: 'buildsafe',
@@ -57,7 +57,7 @@ export const projectsData: ProjectItem[] = [
     extraTech: '+2 MySQL · Cloudinary',
     outcome: 'Improving safety on construction projects',
     githubUrl: 'https://github.com/jhanhrndz/buildsafe-frontend',
-    categories: ['AI', 'Computer Vision', 'Web Development'],
+    categories: ['Software Development'],
   },
   {
     id: 'tiendaya',
@@ -69,7 +69,7 @@ export const projectsData: ProjectItem[] = [
     technologies: ['React', 'Node.js', 'Express', 'MySQL', 'REST API'],
     outcome: 'Enhancing local e-commerce and digital inclusion',
     githubUrl: 'https://github.com/jhanhrndz/tiendaYa-project',
-    categories: ['Web Development'],
+    categories: ['Software Development'],
   },
   {
     id: 'transpormap',
@@ -81,6 +81,6 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Java', 'Oracle', 'Geolocation', 'Maps'],
     outcome: 'Reshaping urban mobility with real-time data',
     githubUrl: 'https://github.com/jhanhrndz/transpormap',
-    categories: ['Geolocation'],
+    categories: ['Software Development'],
   },
 ];
