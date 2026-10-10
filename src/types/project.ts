@@ -1,10 +1,7 @@
 export type ProjectCategory =
-  | 'AI'
-  | 'Computer Vision'
-  | 'Web Development'
   | 'Networking'
   | 'Systems Administration'
-  | 'Geolocation';
+  | 'Software Development';
 
 export interface ProjectItem {
   id: string;
