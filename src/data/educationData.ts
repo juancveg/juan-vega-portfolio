@@ -22,6 +22,7 @@ export const educationData: EducationData = {
     level: 'B2 Upper Intermediate',
     score: '58/100 · Reading C2',
     badge: 'CEFR B2 Certified',
+    credentialUrl: 'https://cert.efset.org/kDBTFU',
   },
   training: [
     {
@@ -30,6 +31,7 @@ export const educationData: EducationData = {
       issuer: 'Cisco Networking Academy',
       date: 'Jun 2026',
       credentialType: 'Certificate',
+      credentialUrl: 'https://www.credly.com/badges/9df252d7-a41b-43e6-9299-698a71a72753/linked_in_profile',
     },
     {
       id: 'database-admin-course',
@@ -38,6 +40,7 @@ export const educationData: EducationData = {
       location: 'Barranquilla',
       date: 'Sep 2025',
       credentialType: 'Certificate',
+      credentialUrl: 'https://capacitateparaelempleo.org/verifica/b620219f-daca-4257-b418-d771dae93033/5026bc30-a5b9-4009-96c7-a125f8d832d8',
     },
     {
       id: 'basic-computing-course',
@@ -46,6 +49,7 @@ export const educationData: EducationData = {
       location: 'Barranquilla',
       date: 'Mar 2025',
       credentialType: 'Certificate',
+      credentialUrl: 'https://capacitateparaelempleo.org/verifica/b620219f-daca-4257-b418-d771dae93033/554dca66-e75e-42cc-9a25-ed4a9397a841',
     },
     {
       id: 'administrative-assistant',
