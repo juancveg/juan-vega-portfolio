@@ -17,6 +17,7 @@ export interface LanguageCertItem {
   level: string;
   score: string;
   badge?: string;
+  credentialUrl?: string;
 }
 
 export interface TrainingItem {
@@ -26,6 +27,7 @@ export interface TrainingItem {
   date: string;
   credentialType: string;
   location?: string;
+  credentialUrl?: string;
 }
 
 export interface EducationData {
