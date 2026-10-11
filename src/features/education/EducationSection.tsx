@@ -10,10 +10,7 @@ import {
   Calendar,
   MapPin,
   Building2,
-  GripVertical,
-  Shuffle,
-  RotateCcw,
-  ArrowLeftRight,
+  ExternalLink,
   BookOpen,
 } from 'lucide-react';
 import { educationData } from '@/data/educationData';
@@ -30,7 +27,8 @@ export interface CredentialCardItem {
   highlightValue: string;
   highlightSub?: string;
   statusBadge: string;
-  statusType: 'in-progress' | 'certified' | 'verified';
+  statusType: 'in-progress' | 'credential' | 'completed';
+  credentialUrl?: string;
   iconType: 'degree' | 'language' | 'network' | 'database' | 'computing' | 'admin';
 }
 
@@ -64,8 +62,9 @@ const buildInitialCredentials = (): CredentialCardItem[] => {
       highlightLabel: 'Proficiency Level',
       highlightValue: lang.level,
       highlightSub: lang.score,
-      statusBadge: 'Certified',
-      statusType: 'certified',
+      statusBadge: 'View Credential',
+      statusType: 'credential',
+      credentialUrl: lang.credentialUrl,
       iconType: 'language',
     },
     {
@@ -77,8 +76,9 @@ const buildInitialCredentials = (): CredentialCardItem[] => {
       date: training[0].date,
       highlightLabel: 'Domain Focus',
       highlightValue: 'Network Fundamentals & Protocols',
-      statusBadge: 'Verified',
-      statusType: 'verified',
+      statusBadge: 'View Credential',
+      statusType: 'credential',
+      credentialUrl: training[0].credentialUrl,
       iconType: 'network',
     },
     {
@@ -91,8 +91,9 @@ const buildInitialCredentials = (): CredentialCardItem[] => {
       date: training[1].date,
       highlightLabel: 'Domain Focus',
       highlightValue: 'Database Administration & SQL Queries',
-      statusBadge: 'Verified',
-      statusType: 'verified',
+      statusBadge: 'View Credential',
+      statusType: 'credential',
+      credentialUrl: training[1].credentialUrl,
       iconType: 'database',
     },
     {
@@ -105,8 +106,9 @@ const buildInitialCredentials = (): CredentialCardItem[] => {
       date: training[2].date,
       highlightLabel: 'Domain Focus',
       highlightValue: 'Computing Foundations & Hardware Systems',
-      statusBadge: 'Verified',
-      statusType: 'verified',
+      statusBadge: 'View Credential',
+      statusType: 'credential',
+      credentialUrl: training[2].credentialUrl,
       iconType: 'computing',
     },
     {
@@ -119,8 +121,8 @@ const buildInitialCredentials = (): CredentialCardItem[] => {
       date: training[3].date,
       highlightLabel: 'Domain Focus',
       highlightValue: 'Administrative Support & Operations',
-      statusBadge: 'Verified',
-      statusType: 'verified',
+      statusBadge: 'Completed',
+      statusType: 'completed',
       iconType: 'admin',
     },
   ];
@@ -143,10 +145,6 @@ interface TiltState {
 }
 
 export const EducationSection: React.FC = () => {
-  const [credentials, setCredentials] = useState<CredentialCardItem[]>(initialCredentials);
-  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const [dropTargetIndex, setDropTargetIndex] = useState<number | null>(null);
-  const [selectedSwapIndex, setSelectedSwapIndex] = useState<number | null>(null);
   const [tiltMap, setTiltMap] = useState<Record<string, TiltState>>({});
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -157,99 +155,9 @@ export const EducationSection: React.FC = () => {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  const isReordered = credentials.some(
-    (item, idx) => item.id !== initialCredentials[idx].id
-  );
-
-  // Shuffle positions handler
-  const handleShuffle = () => {
-    if (!isDesktop) return;
-    const shuffled = [...credentials];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    setCredentials(shuffled);
-    setSelectedSwapIndex(null);
-  };
-
-  // Reset positions to canonical order
-  const handleReset = () => {
-    if (!isDesktop) return;
-    setCredentials([...initialCredentials]);
-    setSelectedSwapIndex(null);
-    setDraggedIndex(null);
-    setDropTargetIndex(null);
-  };
-
-  // Drag and Drop handlers (PC only)
-  const handleDragStart = (index: number, e: React.DragEvent) => {
-    if (!isDesktop) return;
-    setDraggedIndex(index);
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', index.toString());
-  };
-
-  const handleDragOver = (index: number, e: React.DragEvent) => {
-    if (!isDesktop) return;
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-    if (dropTargetIndex !== index) {
-      setDropTargetIndex(index);
-    }
-  };
-
-  const handleDragLeave = (index: number) => {
-    if (!isDesktop) return;
-    if (dropTargetIndex === index) {
-      setDropTargetIndex(null);
-    }
-  };
-
-  const handleDrop = (targetIndex: number, e: React.DragEvent) => {
-    if (!isDesktop) return;
-    e.preventDefault();
-    if (draggedIndex === null || draggedIndex === targetIndex) {
-      setDraggedIndex(null);
-      setDropTargetIndex(null);
-      return;
-    }
-
-    const updated = [...credentials];
-    const [moved] = updated.splice(draggedIndex, 1);
-    updated.splice(targetIndex, 0, moved);
-
-    setCredentials(updated);
-    setDraggedIndex(null);
-    setDropTargetIndex(null);
-  };
-
-  const handleDragEnd = () => {
-    if (!isDesktop) return;
-    setDraggedIndex(null);
-    setDropTargetIndex(null);
-  };
-
-  // Tap-to-Swap for PC click interactions
-  const handleCardClick = (index: number) => {
-    if (!isDesktop) return;
-    if (selectedSwapIndex === null) {
-      setSelectedSwapIndex(index);
-    } else if (selectedSwapIndex === index) {
-      setSelectedSwapIndex(null);
-    } else {
-      const updated = [...credentials];
-      const temp = updated[selectedSwapIndex];
-      updated[selectedSwapIndex] = updated[index];
-      updated[index] = temp;
-      setCredentials(updated);
-      setSelectedSwapIndex(null);
-    }
-  };
-
   // 3D Perspective Tilt handlers (PC only)
   const handleMouseMove = (id: string, e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDesktop || draggedIndex !== null) return;
+    if (!isDesktop) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
@@ -289,94 +197,32 @@ export const EducationSection: React.FC = () => {
               Formal systems engineering degree, standardized B2 English qualification, and specialized technical certifications.
             </p>
           </div>
-
-          {/* Interactive Toolbar for Position Swapping (Desktop only) */}
-          <div className="hidden lg:flex items-center gap-2.5 self-start md:self-end">
-            <button
-              type="button"
-              onClick={handleShuffle}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300/90 text-xs font-mono font-semibold transition-all active:scale-95 cursor-pointer shadow-xs"
-              title="Shuffle all card positions"
-            >
-              <Shuffle className="w-3.5 h-3.5 text-slate-600" />
-              <span>Shuffle Positions</span>
-            </button>
-
-            {isReordered && (
-              <button
-                type="button"
-                onClick={handleReset}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs font-mono transition-all active:scale-95 cursor-pointer shadow-2xs"
-                title="Restore default canonical order"
-              >
-                <RotateCcw className="w-3 h-3 text-slate-600" />
-                <span>Reset</span>
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Micro instruction bar (Desktop only) */}
-        <div className="hidden lg:flex mb-6 items-center justify-between gap-3 text-xs font-mono text-slate-600 bg-white/70 backdrop-blur-[2px] px-4 py-2.5 rounded-xl border border-slate-300/70">
-          <span className="flex items-center gap-2">
-            <GripVertical className="w-4 h-4 text-slate-400" />
-            <span>Interactive layout: drag or tap any card to swap with any other position</span>
-          </span>
-          {selectedSwapIndex !== null && (
-            <span className="text-slate-900 font-bold bg-white px-2.5 py-1 rounded-lg border border-slate-300 flex items-center gap-1.5 shadow-2xs">
-              <ArrowLeftRight className="w-3.5 h-3.5 text-slate-700" />
-              <span>
-                Selected: Slot #{selectedSwapIndex + 1}. Tap any other card to swap.
-              </span>
-            </span>
-          )}
         </div>
 
         {/* Unified 3-Column Grid: Interchangeable on PC, Static on Mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {credentials.map((item, index) => {
+          {initialCredentials.map((item) => {
             const ItemIcon = credentialIconMap[item.iconType] || GraduationCap;
-            const isDragged = isDesktop && draggedIndex === index;
-            const isDropTarget = isDesktop && dropTargetIndex === index;
-            const isSelected = isDesktop && selectedSwapIndex === index;
             const tilt = isDesktop ? tiltMap[item.id] : undefined;
 
             return (
               <div
                 key={item.id}
-                draggable={isDesktop}
-                onDragStart={(e) => handleDragStart(index, e)}
-                onDragOver={(e) => handleDragOver(index, e)}
-                onDragLeave={() => handleDragLeave(index)}
-                onDrop={(e) => handleDrop(index, e)}
-                onDragEnd={handleDragEnd}
-                onClick={() => handleCardClick(index)}
                 onMouseMove={(e) => handleMouseMove(item.id, e)}
                 onMouseLeave={() => handleMouseLeave(item.id)}
                 style={{
-                  transform:
-                    tilt && !isDragged
-                      ? `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg) translateY(-2px)`
-                      : undefined,
+                  transform: tilt
+                    ? `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg) translateY(-2px)`
+                    : undefined,
                   transition: tilt
                     ? 'transform 0.12s ease-out, box-shadow 0.2s ease, border-color 0.2s ease'
                     : 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease',
                 }}
-                className={`rounded-2xl bg-white border p-6 sm:p-7 shadow-sm flex flex-col justify-between space-y-5 relative group select-none transition-all ${
-                  isDesktop
-                    ? isDragged
-                      ? 'opacity-40 ring-2 ring-slate-800 scale-95 border-dashed border-slate-400'
-                      : isDropTarget
-                      ? 'ring-2 ring-slate-800 bg-slate-50 border-slate-400 shadow-md scale-[1.01]'
-                      : isSelected
-                      ? 'ring-2 ring-slate-800 border-slate-800 shadow-md'
-                      : 'border-slate-200/90 hover:border-slate-300 hover:shadow cursor-grab active:cursor-grabbing'
-                    : 'border-slate-200/90'
-                }`}
+                className="rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow p-6 sm:p-7 shadow-sm flex flex-col justify-between space-y-5 relative group transition-all"
               >
                 {/* Upper section */}
                 <div className="space-y-4">
-                  {/* Top Meta: Icon, Slot Number, Category and Grip handle */}
+                  {/* Top Meta: Icon, Category and Credential Type */}
                   <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
                     <div className="flex items-center gap-2.5">
                       <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-slate-200/80 transition-colors">
@@ -384,9 +230,6 @@ export const EducationSection: React.FC = () => {
                       </div>
                       <div>
                         <span className="font-mono text-[10px] text-slate-500 font-bold uppercase tracking-wider block">
-                          Slot #{index + 1}
-                        </span>
-                        <span className="text-xs text-slate-600 font-medium">
                           {item.category}
                         </span>
                       </div>
@@ -395,12 +238,6 @@ export const EducationSection: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-[10px] px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-bold uppercase tracking-wider">
                         {item.credentialType}
-                      </span>
-                      <span
-                        className="hidden lg:inline-flex p-1 rounded text-slate-400 group-hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-grab active:cursor-grabbing"
-                        title="Drag or tap to swap"
-                      >
-                        <GripVertical className="w-4 h-4" />
                       </span>
                     </div>
                   </div>
@@ -452,6 +289,18 @@ export const EducationSection: React.FC = () => {
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse" />
                       <span>{item.statusBadge}</span>
                     </span>
+                  ) : item.statusType === 'credential' && item.credentialUrl ? (
+                    <a
+                      href={item.credentialUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`View ${item.title} credential (opens in a new tab)`}
+                      className="inline-flex items-center gap-1.5 text-teal-800 hover:text-teal-900 font-semibold text-[11px] underline-offset-4 hover:underline transition-colors"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-700" />
+                      <span>{item.statusBadge}</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
                   ) : (
                     <span className="inline-flex items-center gap-1 text-slate-700 font-semibold text-[11px]">
                       <CheckCircle2 className="w-3.5 h-3.5 text-slate-500" />
