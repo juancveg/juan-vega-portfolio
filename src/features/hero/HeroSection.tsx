@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Download } from 'lucide-react';
 import { NetworkMeshCanvas } from './NetworkMeshCanvas';
 import engineerPortrait from '@/assets/profile.png';
 
@@ -122,6 +122,15 @@ export const HeroSection: React.FC = () => {
               >
                 <span>Contact</span>
                 <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
+              </a>
+
+              <a
+                href="/Juan-Carlos-Vega-CV.pdf"
+                download
+                className="col-span-2 sm:col-span-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-3 sm:px-5 sm:py-3.5 rounded-xl bg-white/80 hover:bg-white text-slate-800 border border-slate-300 font-sans text-xs sm:text-sm font-medium transition-all shadow-2xs active:scale-98 text-center"
+              >
+                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500" />
+                <span>Download CV</span>
               </a>
             </div>
           </div>
