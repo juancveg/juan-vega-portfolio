@@ -14,8 +14,7 @@ export const projectsData: ProjectItem[] = [
     image: zabbixImg,
     summary:
       'Home lab monitoring setup built with Zabbix on Ubuntu Server, tracking host availability with tested alert triggers and a NOC-style dashboard.',
-    technologies: ['Zabbix', 'Ubuntu Server', 'MariaDB', 'SSH', 'VirtualBox', 'ICMP'],
-    extraTech: '+1 Troubleshooting',
+    technologies: ['Zabbix', 'Ubuntu Server', 'MariaDB', 'SSH', 'VirtualBox', 'ICMP', 'Troubleshooting'],
     outcome: 'Practicing real NOC L1 monitoring and troubleshooting workflows',
     githubUrl: 'https://github.com/juancveg/zabbix-monitoring-lab',
     categories: ['Systems Administration', 'Networking'],
@@ -27,8 +26,7 @@ export const projectsData: ProjectItem[] = [
     image: technovaImg,
     summary:
       'Cisco Packet Tracer lab implementing a 3-VLAN corporate network with inter-VLAN routing, VLSM, DHCP, DNS, Port Security, and ACLs.',
-    technologies: ['Cisco Packet Tracer', 'VLANs', '802.1Q', 'VLSM', 'DHCP', 'ACLs'],
-    extraTech: '+2 Port Security · DNS',
+    technologies: ['Cisco Packet Tracer', 'VLANs', '802.1Q', 'VLSM', 'DHCP', 'ACLs', 'Port Security', 'DNS'],
     outcome: 'Applying enterprise networking concepts end-to-end',
     githubUrl: 'https://github.com/juancveg/technova-vlan-lab',
     categories: ['Networking'],
@@ -40,8 +38,7 @@ export const projectsData: ProjectItem[] = [
     image: networkAnalyzerImg,
     summary:
       'Python network scanner operated from an HTML dashboard: detects active hosts via ARP and ICMP, calculates VLSM subnets, and visualizes the topology.',
-    technologies: ['Python', 'ARP', 'ICMP', 'VLSM', 'Subnetting', 'HTML'],
-    extraTech: '+1 Cisco',
+    technologies: ['Python', 'ARP', 'ICMP', 'VLSM', 'Subnetting', 'HTML', 'Cisco'],
     outcome: 'Making networking theory concrete and measurable',
     githubUrl: 'https://github.com/juancveg/Network-Analyzer-Dashboard',
     categories: ['Networking', 'Software Development'],
@@ -53,8 +50,7 @@ export const projectsData: ProjectItem[] = [
     image: buildsafeImg,
     summary:
       'Web platform that monitors PPE compliance on construction sites in real time using AI-powered computer vision.',
-    technologies: ['React', 'Node.js', 'Express', 'Python', 'Flask', 'YOLOv11'],
-    extraTech: '+2 MySQL · Cloudinary',
+    technologies: ['React', 'Node.js', 'Express', 'Python', 'Flask', 'YOLOv11', 'MySQL', 'Cloudinary'],
     outcome: 'Improving safety on construction projects',
     githubUrl: 'https://github.com/jhanhrndz/buildsafe-frontend',
     categories: ['Software Development'],
