@@ -11,12 +11,9 @@ import type { ProjectCategory } from '@/types/project';
 
 const filterList: ('All' | ProjectCategory)[] = [
   'All',
-  'AI',
-  'Computer Vision',
-  'Web Development',
   'Networking',
   'Systems Administration',
-  'Geolocation',
+  'Software Development',
 ];
 
 const PROJECTS_PER_PAGE = 3;
