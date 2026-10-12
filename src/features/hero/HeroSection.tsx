@@ -20,10 +20,10 @@ export const HeroSection: React.FC = () => {
               <span className="truncate">Available for Technical Roles • Networks &amp; IT Support</span>
             </div>
 
-            {/* Prominent Personal Brand Title (Juan Carlos Vega) */}
+            {/* Prominent Personal Brand Title (Juan Vega) */}
             <div className="space-y-1.5 sm:space-y-3">
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
-                Juan Carlos Vega
+                Juan Vega
               </h1>
               <p className="text-base sm:text-2xl lg:text-3xl font-semibold text-slate-700 tracking-tight leading-snug">
                 Systems Engineering Student{' '}
@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => {
               <div className="relative w-44 sm:w-52 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 bg-slate-100">
                 <img
                   src={engineerPortrait}
-                  alt="Juan Carlos Vega - Systems Engineering Student"
+                  alt="Juan Vega - Systems Engineering Student"
                   className="w-full h-full object-cover object-top filter contrast-[1.02]"
                   loading="eager"
                 />
@@ -135,12 +135,12 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Desktop Portrait of Juan Carlos Vega (Hidden on mobile) */}
+          {/* Right Column: Desktop Portrait of Juan Vega (Hidden on mobile) */}
           <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 justify-center lg:justify-end">
             <div className="relative w-full max-w-md lg:max-w-none aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/60 border border-slate-200/90 bg-slate-100">
               <img
                 src={engineerPortrait}
-                alt="Juan Carlos Vega - Systems Engineering Student"
+                alt="Juan Vega - Systems Engineering Student"
                 className="w-full h-full object-cover object-top filter contrast-[1.02]"
                 loading="eager"
               />
