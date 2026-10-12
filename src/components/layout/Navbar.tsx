@@ -126,7 +126,7 @@ export const Navbar: React.FC = () => {
     >
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 h-16 lg:h-[72px] flex items-center justify-between">
         {/* Solo logo (sin texto) */}
-        <a href="#" aria-label="Juan Carlos Vega - Inicio" className="group inline-flex">
+        <a href="#" aria-label="Juan Vega - Inicio" className="group inline-flex">
           <div
             className={`w-12 h-12 rounded-xl flex items-center justify-center font-mono font-bold text-base tracking-wider shadow-sm transition-colors duration-300 ${logoCls}`}
           >
