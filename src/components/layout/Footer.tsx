@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                 <span className="w-12 h-12 rounded-xl bg-white text-slate-900 flex items-center justify-center font-mono font-bold text-base tracking-wider group-hover:bg-teal-50 transition-colors">
                   JCV
                 </span>
-                <span className="text-white font-bold text-lg tracking-tight">Juan Carlos Vega</span>
+                <span className="text-white font-bold text-lg tracking-tight">Juan Vega</span>
               </a>
 
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight max-w-md">
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
         {/* Barra inferior */}
         <div className="pt-6 border-t border-white/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-5 text-xs text-slate-500">
           <p className="text-center sm:text-left">
-            © {CURRENT_YEAR} Juan Carlos Vega. Built with React, TypeScript &amp; Tailwind CSS.
+            © {CURRENT_YEAR} Juan Vega Rojano. Built with React, TypeScript &amp; Tailwind CSS.
           </p>
 
           <button
