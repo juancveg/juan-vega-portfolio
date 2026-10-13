@@ -2,6 +2,8 @@
 
 Personal portfolio website built to showcase my work, skills, and professional profile as a Systems Engineering student.
 
+[View the live portfolio](https://juanvegarojano.vercel.app/)
+
 ---
 
 ## Built With
@@ -18,12 +20,10 @@ Personal portfolio website built to showcase my work, skills, and professional p
 
 ## Running Locally
 
-```bash
-npm install
-npm run dev
-```
+### Requirements
 
-Open the local URL printed in the terminal (usually [http://localhost:5173](http://localhost:5173)).
+- Node.js 20.19+ or 22.12+
+- npm
 
 ---
 
