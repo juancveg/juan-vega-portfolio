@@ -125,7 +125,7 @@ export const HeroSection: React.FC = () => {
               </a>
 
               <a
-                href="/Juan-Carlos-Vega-CV.pdf"
+                href="/CV%20-%20Juan%20Carlos%20Vega%20Rojano.pdf"
                 download="CV - Juan Carlos Vega Rojano.pdf"
                 className="col-span-2 sm:col-span-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-3 sm:px-5 sm:py-3.5 rounded-xl bg-white/80 hover:bg-white text-slate-800 border border-slate-300 font-sans text-xs sm:text-sm font-medium transition-all shadow-2xs active:scale-98 text-center"
               >
