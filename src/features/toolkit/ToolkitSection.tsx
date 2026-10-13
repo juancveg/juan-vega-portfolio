@@ -94,8 +94,8 @@ export const ToolkitSection: React.FC = () => {
   const activeTabMeta = filterTabs.find((t) => t.id === activeCategory);
 
   return (
-    <section id="toolkit" className="py-20 md:py-24 border-t border-slate-200 bg-[#f8fafc] relative">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+    <section id="toolkit" className="py-20 md:py-24 border-t border-slate-200 bg-slate-bg relative">
+      <div className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
         {/* Section Header */}
         <div className="space-y-3 max-w-3xl mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 text-teal-800 font-mono text-xs font-semibold uppercase tracking-wider">
@@ -114,7 +114,7 @@ export const ToolkitSection: React.FC = () => {
         <div className="mb-10 sm:mb-12">
           <div className="relative w-full">
             {/* Scrollable track on mobile/tablet with touch scrolling, cleanly wrapped on lg+ screens */}
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 -mx-4 sm:mx-0 px-4 sm:px-0 lg:flex-wrap lg:overflow-visible">
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-2 -mx-4 px-4 sm:mx-0 sm:px-0 lg:flex-wrap lg:overflow-visible">
               {filterTabs.map((tab) => {
                 const TabIcon = tab.icon;
                 const isActive = activeCategory === tab.id;
@@ -124,14 +124,14 @@ export const ToolkitSection: React.FC = () => {
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveCategory(tab.id)}
-                    className={`inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all duration-200 cursor-pointer active:scale-97 select-none ${
+                    className={`inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs font-medium whitespace-nowrap shrink-0 transition-all duration-200 cursor-pointer active:scale-97 select-none ${
                       isActive
                         ? 'bg-slate-900 text-white shadow-sm ring-2 ring-slate-900/10'
                         : 'bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-950 border border-slate-200/90 hover:border-slate-300 shadow-2xs'
                     }`}
                   >
                     <TabIcon
-                      className={`w-3.5 h-3.5 flex-shrink-0 transition-colors ${
+                      className={`w-3.5 h-3.5 shrink-0 transition-colors ${
                         isActive ? 'text-teal-400' : 'text-slate-500'
                       }`}
                     />
@@ -199,14 +199,14 @@ export const ToolkitSection: React.FC = () => {
                   {/* Category Header */}
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3.5">
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-200/70 text-teal-800 flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-200/70 text-teal-800 flex items-center justify-center shrink-0">
                         <CatIcon className="w-4 h-4" />
                       </div>
                       <h3 className="text-base font-bold text-slate-900 truncate">
                         {cat.name}
                       </h3>
                     </div>
-                    <span className="font-mono text-[11px] font-semibold text-slate-500 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200/80 flex-shrink-0">
+                    <span className="font-mono text-[11px] font-semibold text-slate-500 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200/80 shrink-0">
                       {cat.tools.length} Tools
                     </span>
                   </div>
@@ -227,7 +227,7 @@ export const ToolkitSection: React.FC = () => {
                           className="p-2.5 rounded-xl bg-slate-50/80 hover:bg-white border border-slate-200/70 hover:border-slate-300 hover:shadow-xs transition-all flex items-center gap-2.5 group"
                         >
                           {/* Logo container */}
-                          <div className="w-7 h-7 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center flex-shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
+                          <div className="w-7 h-7 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
                             {LogoComponent ? (
                               <LogoComponent className="w-4 h-4" />
                             ) : (
