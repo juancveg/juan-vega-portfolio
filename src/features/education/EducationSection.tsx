@@ -194,7 +194,7 @@ export const EducationSection: React.FC = () => {
               Education &amp; Certifications
             </h2>
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
-              Formal systems engineering degree, standardized B2 English qualification, and specialized technical certifications.
+              My academic background, language certification, and technical training.
             </p>
           </div>
         </div>
