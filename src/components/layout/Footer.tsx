@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUp, ArrowUpRight, Mail, MessageCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/common/Icons';
+import { BrandMark } from '@/components/common/BrandMark';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -56,8 +57,8 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-5 space-y-10">
             <div className="space-y-6">
               <a href="#" className="inline-flex items-center gap-3 group" aria-label="Back to top">
-                <span className="w-12 h-12 rounded-xl bg-white text-slate-900 flex items-center justify-center font-mono font-bold text-base tracking-wider group-hover:bg-teal-50 transition-colors">
-                  JCV
+                <span className="w-12 h-12 rounded-xl bg-white text-slate-900 flex items-center justify-center group-hover:bg-teal-50 transition-colors">
+                  <BrandMark background="light" className="w-8 h-8" />
                 </span>
                 <span className="text-white font-bold text-lg tracking-tight">Juan Vega</span>
               </a>

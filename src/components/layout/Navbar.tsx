@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Menu, X, ArrowUpRight, FolderGit2, Wrench, GraduationCap, Mail } from 'lucide-react';
+import { BrandMark } from '@/components/common/BrandMark';
 
 const navLinks = [
   { label: 'Projects', href: '#projects', icon: FolderGit2 },
@@ -128,9 +129,9 @@ export const Navbar: React.FC = () => {
         {/* Solo logo (sin texto) */}
         <a href="#" aria-label="Juan Vega - Inicio" className="group inline-flex">
           <div
-            className={`w-12 h-12 rounded-xl flex items-center justify-center font-mono font-bold text-base tracking-wider shadow-sm transition-colors duration-300 ${logoCls}`}
+            className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm transition-colors duration-300 ${logoCls}`}
           >
-            JCV
+            <BrandMark background={onDark ? 'light' : 'dark'} className="w-8 h-8" />
           </div>
         </a>
 
