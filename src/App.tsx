@@ -8,7 +8,7 @@ import { Footer } from '@/components/layout/Footer';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 antialiased selection:bg-teal-900/10 selection:text-teal-950 relative">
+    <div className="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-teal-900/10 selection:text-teal-950 relative">
       {/* Header Navigation */}
       <Navbar />
 
