@@ -193,9 +193,6 @@ export const ProjectsSection: React.FC = () => {
                   <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
                 </a>
 
-                <span className="font-mono text-[11px] text-slate-500">
-                  Lab Repository
-                </span>
               </div>
             </article>
           ))}
