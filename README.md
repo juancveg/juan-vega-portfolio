@@ -25,6 +25,15 @@ Personal portfolio website built to showcase my work, skills, and professional p
 - Node.js 20.19+ or 22.12+
 - npm
 
+### Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually [http://localhost:5173](http://localhost:5173).
+
 ---
 
 ## Editing Content
