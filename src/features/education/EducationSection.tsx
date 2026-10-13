@@ -182,7 +182,7 @@ export const EducationSection: React.FC = () => {
       className="py-20 md:py-28 border-y border-slate-300/70 bg-[#e4ede7] relative transition-colors"
       data-navbar-theme="light"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+      <div className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-2xl space-y-3">
@@ -225,7 +225,7 @@ export const EducationSection: React.FC = () => {
                   {/* Top Meta: Icon, Category and Credential Type */}
                   <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-slate-200/80 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 flex items-center justify-center shrink-0 group-hover:bg-slate-200/80 transition-colors">
                         <ItemIcon className="w-5 h-5 text-slate-800" />
                       </div>
                       <div>
@@ -248,7 +248,7 @@ export const EducationSection: React.FC = () => {
                       {item.title}
                     </h3>
                     <div className="flex items-center gap-1.5 text-slate-700 text-xs sm:text-sm font-semibold">
-                      <Building2 className="w-3.5 h-3.5 text-slate-500 flex-shrink-0" />
+                      <Building2 className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                       <span>{item.issuer}</span>
                       {item.location && (
                         <span className="text-slate-500 font-normal inline-flex items-center gap-1">

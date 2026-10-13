@@ -49,9 +49,9 @@ export const Footer: React.FC = () => {
   return (
     <footer className="relative bg-slate-950 text-slate-300 font-sans overflow-hidden">
       {/* Línea de acento superior */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-400/60 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-teal-400/60 to-transparent" />
 
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 pt-16 sm:pt-20 pb-8">
+      <div className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 pt-16 sm:pt-20 pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-14">
           {/* Marca + mensaje + navegación */}
           <div className="lg:col-span-5 space-y-10">
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                   <a
                     href={href}
                     {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-                    className="group flex items-center gap-4 h-full rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5 transition-all hover:border-teal-400/50 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+                    className="group flex items-center gap-4 h-full rounded-2xl border border-white/10 bg-white/3 p-4 sm:p-5 transition-all hover:border-teal-400/50 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
                   >
                     <span className="shrink-0 w-11 h-11 rounded-xl bg-white/10 text-white flex items-center justify-center group-hover:bg-teal-400 group-hover:text-slate-950 transition-colors">
                       <Icon className="w-5 h-5" />

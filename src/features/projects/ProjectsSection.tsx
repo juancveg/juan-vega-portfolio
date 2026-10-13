@@ -57,7 +57,7 @@ export const ProjectsSection: React.FC = () => {
       className="py-20 md:py-28 border-y border-slate-300/70 bg-[#e4ede7] relative transition-colors"
       data-navbar-theme="light"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+      <div className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-2xl space-y-3">
@@ -75,7 +75,7 @@ export const ProjectsSection: React.FC = () => {
 
           {/* Responsive Filter Ribbon: Horizontal Scroll on Mobile, Wrapped on Desktop (No numbers) */}
           <div className="relative w-full lg:w-auto self-start lg:self-end">
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1.5 px-1 -mx-4 sm:mx-0 px-4 sm:px-0 lg:flex-wrap">
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1.5 -mx-4 sm:mx-0 px-4 sm:px-0 lg:flex-wrap">
               {filterList.map((filter) => {
                 const isSelected = selectedFilter === filter;
 
@@ -84,7 +84,7 @@ export const ProjectsSection: React.FC = () => {
                     key={filter}
                     type="button"
                     onClick={() => handleFilterSelect(filter)}
-                    className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold whitespace-nowrap flex-shrink-0 transition-all duration-200 cursor-pointer active:scale-97 select-none ${
+                    className={`px-4 py-2 rounded-xl font-mono text-xs font-semibold whitespace-nowrap shrink-0 transition-all duration-200 cursor-pointer active:scale-97 select-none ${
                       isSelected
                         ? 'bg-slate-900 text-white shadow-xs ring-2 ring-slate-900/10'
                         : 'bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-950 border border-slate-300/80 shadow-2xs'
@@ -119,7 +119,7 @@ export const ProjectsSection: React.FC = () => {
                     className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-300"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
                   <span className="absolute bottom-3 left-3 font-mono text-[10px] text-white/95 bg-slate-950/80 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/15 font-semibold tracking-wide">
                     {project.previewLabel}
                   </span>

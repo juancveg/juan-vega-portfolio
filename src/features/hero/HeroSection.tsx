@@ -10,10 +10,10 @@ export const HeroSection: React.FC = () => {
       <NetworkMeshCanvas />
 
       {/* Hero Content with Soft Diffusion Backdrop across wide layout */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
+      <div className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
           {/* Left Column: Transparent on mobile for circuit visibility, diffused on desktop */}
-          <div className="lg:col-span-7 xl:col-span-8 bg-transparent lg:bg-white/80 lg:backdrop-blur-[4px] border-0 lg:border lg:border-white/90 shadow-none lg:shadow-xs p-1 sm:p-6 lg:p-10 space-y-4 sm:space-y-6">
+          <div className="lg:col-span-7 xl:col-span-8 bg-transparent lg:bg-white/80 lg:backdrop-blur-xs border-0 lg:border lg:border-white/90 shadow-none lg:shadow-xs p-1 sm:p-6 lg:p-10 space-y-4 sm:space-y-6">
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100/80 backdrop-blur-[2px] border border-slate-200/80 text-slate-700 font-mono text-[11px] sm:text-xs shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse" />
@@ -35,7 +35,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Mobile Portrait with Live Network Node HUD Tag */}
             <div className="lg:hidden flex justify-center py-1.5">
-              <div className="relative w-44 sm:w-52 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 bg-slate-100">
+              <div className="relative w-44 sm:w-52 aspect-4/5 rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 bg-slate-100">
                 <img
                   src={engineerPortrait}
                   alt="Juan Vega - Systems Engineering Student"
@@ -137,7 +137,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Right Column: Desktop Portrait of Juan Vega (Hidden on mobile) */}
           <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 justify-center lg:justify-end">
-            <div className="relative w-full max-w-md lg:max-w-none aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/60 border border-slate-200/90 bg-slate-100">
+            <div className="relative w-full max-w-md lg:max-w-none aspect-4/5 rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/60 border border-slate-200/90 bg-slate-100">
               <img
                 src={engineerPortrait}
                 alt="Juan Vega - Systems Engineering Student"
