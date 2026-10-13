@@ -5,7 +5,7 @@ export const contactData: ContactData = {
   subtitle: 'Looking for dependable support in network operations or IT infrastructure? Let’s talk about keeping your systems connected, reliable, and secure.',
   description:
     'I am actively available for technical positions in network operations, IT infrastructure support, and cybersecurity. Let us discuss how I can add immediate value to your engineering team.',
-  availability: 'Available for Remote, Hybrid, and On-site opportunities in Barranquilla and internationally',
+  availability: 'Open to international remote opportunities, as well as hybrid or on-site roles based in Barranquilla, Colombia.',
   channels: [
     {
       id: 'email',
