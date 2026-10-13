@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
         {/* Barra inferior */}
         <div className="pt-4 border-t border-white/10 flex flex-col-reverse sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p className="text-center sm:text-left">
-            © {CURRENT_YEAR} Juan Vega Rojano. Built with React, TypeScript &amp; Tailwind CSS.
+            © {CURRENT_YEAR} Juan Vega, All rights reserved.
           </p>
 
           <button
