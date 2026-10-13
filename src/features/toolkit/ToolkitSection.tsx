@@ -103,10 +103,10 @@ export const ToolkitSection: React.FC = () => {
             <span>Applied Stack &amp; Operational Tooling</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Technical Capabilities &amp; Stack
+              Technical Skills &amp; Tools
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Specialized technologies, protocols, and development environments applied across network operations, systems administration, and software engineering.
+            Tools, technologies, and protocols I use to build, manage, and troubleshoot reliable systems.
           </p>
         </div>
 

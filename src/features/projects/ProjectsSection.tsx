@@ -69,7 +69,7 @@ export const ProjectsSection: React.FC = () => {
               Featured Projects &amp; Labs
             </h2>
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
-              Practical engineering solutions applying real-world networking, systems infrastructure, and software architectures.
+              Selected work demonstrating practical problem-solving across networking, infrastructure, and software.
             </p>
           </div>
 
